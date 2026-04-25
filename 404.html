@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' http: https: data:; frame-src https:; connect-src https:;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>o-o0.com</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+@font-face {
+  font-family: 'JB-Mono-Subset';
+  src: local('JetBrains Mono');
+  unicode-range: U+0020-007E;
+}
+
+:root,
+[data-theme="dark"] {
+  --bg:          #000;
+  --bg-nav:      rgba(0, 0, 0, 0.92);
+  --bg-input:    #080808;
+  --border:      #1c1c1c;
+  --text:        #ffffff;
+  --text-dim:    #888888;
+  --text-mid:    #ffffff;
+  --sans: 'JB-Mono-Subset', 'Noto Sans JP', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg:          #fafafa;
+  --bg-nav:      rgba(250, 250, 250, 0.92);
+  --bg-input:    #f0f0f0;
+  --border:      #e0e0e0;
+  --text:        #000000;
+  --text-dim:    #888888;
+  --text-mid:    #000000;
+  --sans: 'JB-Mono-Subset', 'Noto Sans JP', sans-serif;
+  color-scheme: light;
+}
+
+body { transition: background 0.25s ease, color 0.25s ease; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/*NAV*/
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: var(--bg-nav);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text-mid); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  padding: 0.22rem 0.55rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.nav-btn:hover { border-color: var(--text-dim); color: var(--text-mid); }
+.btn-active { color: var(--text); }
+.btn-sep { color: var(--border); }
+.theme-icon { font-size: 0.75rem; line-height: 1; }
+
+/* ── HERO ── */
+header {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 5rem 2rem 3.5rem;
+}
+
+.hero-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+
+.hero-title {
+  font-family: var(--mono);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+
+.hero-desc {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  max-width: 480px;
+  line-height: 1.9;
+}
+
+/*FOOTER*/
+footer {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border);
+}
+
+.footer-links { display: flex; gap: 1.2rem; }
+.footer-links a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text-mid); }
+
+/*RESPONSIVE*/
+@media (max-width: 640px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  header, footer { padding-left: 1rem; padding-right: 1rem; }
+  footer { flex-direction: column; gap: 0.8rem; }
+}
+  </style>
+</head>
+<body>
+
+  <nav id="nav"></nav>
+  <header id="hero"></header>
+  <footer id="footer"></footer>
+
+  <script>
+//404.js
+const I18N = {
+  ja: {
+    tagline:          'エラー',
+    heroTitle:        '404',
+    description:      'リクエストされたURLはサーバーに存在しないようです。',
+    statArticles:     '',
+    nav:              ['すべての記事', '私について'],
+    searchPlaceholder:'検索...',
+    postsLabel:       '',
+    noResults:        '',
+    authorRole:       '',
+    authorBio:        '',
+    footerNote:       '',
+  },
+  en: {
+    tagline:          "That's an error.",
+    heroTitle:        "404",
+    description:      "The requested URL was not found on this server.",
+    statArticles:     '',
+    nav:              ['All articles', 'About me'],
+    searchPlaceholder:'Search...',
+    postsLabel:       '',
+    noResults:        '',
+    authorRole:       '',
+    authorBio:        "",
+    footerNote:       '',
+  },
+};
+
+const AUTHOR = {
+  avatar: '',
+  name:   '',
+  skills: [],
+};
+
+const FOOTER_LINKS = [
+  { label: 'GitHub',     href: 'https://github.com/4sha5new0' },
+  { label: 'Twitter(X)', href: 'https://twitter.com/4sha5new0' },
+];
+
+const TAG_LABELS = {
+  order: { ja: '順番通り', en: 'order' },
+};
+
+const POSTS = [];
+
+//404app.js
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, m => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  })[m]);
+}
+
+function safeStorage(key, allowed) {
+  const val = localStorage.getItem(key);
+  return allowed.includes(val) ? val : allowed[0];
+}
+
+const state = {
+  lang:  safeStorage('devlog-lang',  ['ja', 'en']),
+  theme: safeStorage('devlog-theme', ['dark', 'light']),
+};
+
+const $ = id => document.getElementById(id);
+const t = key => I18N[state.lang][key];
+
+function applyTheme() {
+  document.documentElement.setAttribute('data-theme', state.theme);
+}
+
+function renderAll() {
+  applyTheme();
+  renderNav();
+  renderHero();
+  renderFooter();
+  document.documentElement.lang = state.lang;
+}
+
+const NAV_HREFS = [
+  'articles/index.html',
+  'about/index.html',
+];
+
+function renderNav() {
+  const isDark = state.theme === 'dark';
+
+  $('nav').innerHTML = `
+    <a class="nav-logo" href="/index.html">o-o0.com</a>
+    <ul class="nav-links">
+      ${t('nav').map((n, i) => `<li><a href="${NAV_HREFS[i]}">${escapeHtml(n)}</a></li>`).join('')}
+    </ul>
+    <div class="nav-right">
+      <button id="themeToggle" class="nav-btn" title="Toggle theme">
+        <span class="theme-icon">${isDark ? '☀' : '☾'}</span>
+      </button>
+      <button id="langToggle" class="nav-btn">
+        <span class="${state.lang === 'ja' ? 'btn-active' : ''}">JA</span>
+        <span class="btn-sep">/</span>
+        <span class="${state.lang === 'en' ? 'btn-active' : ''}">EN</span>
+      </button>
+    </div>
+  `;
+
+  $('themeToggle').addEventListener('click', () => {
+    state.theme = state.theme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('devlog-theme', state.theme);
+    renderAll();
+  });
+
+  $('langToggle').addEventListener('click', () => {
+    state.lang = state.lang === 'ja' ? 'en' : 'ja';
+    localStorage.setItem('devlog-lang', state.lang);
+    renderAll();
+  });
+}
+
+function renderHero() {
+  const lines = t('heroTitle').split('\n').map(escapeHtml);
+  $('hero').innerHTML = `
+    <div class="hero-label">${escapeHtml(t('tagline'))}</div>
+    <h1 class="hero-title">${lines.join('<br>')}</h1>
+    <p class="hero-desc">${escapeHtml(t('description'))}</p>
+  `;
+}
+
+function renderFooter() {
+  const links = FOOTER_LINKS.map(l =>
+    '<a href="' + escapeHtml(l.href) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(l.label) + '</a>'
+  ).join('');
+  $('footer').innerHTML =
+    '<span>© ' + new Date().getFullYear() + ' 四捨五入したら0' + escapeHtml(AUTHOR.name) + '</span>' +
+    '<div class="footer-links">' + links + '</div>';
+}
+
+applyTheme();
+document.addEventListener('DOMContentLoaded', renderAll);
+  </script>
+</body>
+</html>

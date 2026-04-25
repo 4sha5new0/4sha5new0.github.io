@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ホーム -->
+  <url>
+    <loc>https://o-o0.com/</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- すべての記事 -->
+  <url>
+    <loc>https://o-o0.com/articles/</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <!-- 私について -->
+  <url>
+    <loc>https://o-o0.com/about/</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <!-- 記事 -->
+  <url>
+    <loc>https://o-o0.com/articles/1/</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://o-o0.com/articles/2/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

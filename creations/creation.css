@@ -1,0 +1,112 @@
+/*CREATION PAGE*/
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+.creation-header {
+  margin-bottom: 2.4rem;
+}
+
+.creation-meta {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.creation-date {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
+
+.creation-medium {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.5rem;
+}
+
+.creation-title {
+  font-family: var(--mono);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.7rem;
+  line-height: 1.2;
+}
+
+.creation-desc {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/*IMAGE — 白銀比 1:√2*/
+.creation-image-wrap {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto 2.4rem;
+  border: 1px solid var(--border);
+}
+
+.creation-image {
+  width: 100%;
+  aspect-ratio: 1.41421 / 1;
+  display: block;
+  object-fit: cover;
+}
+
+.creation-body {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.9;
+  max-width: 520px;
+  margin: 0 auto 2.4rem;
+}
+
+.creation-body p { margin-bottom: 1.2rem; }
+
+.creation-back {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.creation-back a {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+.creation-back a:hover { color: var(--text-mid); }
+
+@media (max-width: 640px) {
+  main { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/*自己紹介ブロック*/
+.creation-author {
+  margin: 3rem auto 0;
+  max-width: 520px;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.creation-author-name {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-mid);
+  margin-bottom: 0.4rem;
+}
+
+.creation-author-bio {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.85;
+}

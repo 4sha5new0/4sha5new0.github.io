@@ -1,0 +1,66 @@
+/*SORT BAR*/
+.sort-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.sort-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.sort-btn:hover  { border-color: var(--text-dim); color: var(--text-mid); }
+.sort-btn.active { border-color: var(--text-mid); color: var(--text); }
+
+/*TAG FILTER BAR*/
+.tag-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.tag-filter-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.tag-filter-btn:hover { border-color: var(--text-dim); color: var(--text-mid); }
+
+[data-theme="dark"]  .tag-filter-btn.active[data-tag="Trip"]     { border-color: #4bd5ff; color: #4bd5ff; }
+[data-theme="light"] .tag-filter-btn.active[data-tag="Trip"]     { border-color: #4bd5ff; color: #4bd5ff; }
+
+[data-theme="dark"]  .tag-filter-btn.active[data-tag="Opinion"]     { border-color: #f80794; color: #f80794; }
+[data-theme="light"] .tag-filter-btn.active[data-tag="Opinion"]     { border-color: #f80794; color: #f80794; }
+
+
+[data-theme="dark"]  .tag-filter-btn.active[data-tag="XREA"]     { border-color: #ab8dff; color: #ab8dff; }
+[data-theme="light"] .tag-filter-btn.active[data-tag="XREA"]     { border-color: #ab8dff; color: #ab8dff; }
+
+
+/*ARTICLE COUNT*/
+.articles-meta {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  margin-left: auto;
+}
+
+/*HEADER COMPACT*/
+header { padding-top: 3.5rem; padding-bottom: 2rem; }
+.hero-title { font-size: clamp(1.2rem, 3vw, 1.8rem); }

@@ -1,0 +1,230 @@
+/*ABOUT PAGE LAYOUT*/
+.about-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 6rem;
+}
+
+/*PROFILE HEADER*/
+.profile-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 1.6rem;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.profile-name {
+  font-family: var(--mono);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+
+.profile-name-en {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.profile-role {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+}
+
+/*SECTION*/
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.about-section-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-text {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  line-height: 2;
+  max-width: 560px;
+}
+.about-text + .about-text {
+  margin-top: 1rem;
+}
+
+/*CAREER TABLE*/
+.career-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.career-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.2rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+}
+.career-row:first-child {
+}
+
+.career-period {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.career-place {
+  font-size: 0.84rem;
+  color: var(--text-mid);
+  margin-bottom: 0.15rem;
+}
+
+
+.career-note {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+/*SKILLS GRID*/
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.6rem;
+  letter-spacing: 0.05em;
+  transition: border-color 0.2s, color 0.2s;
+}
+.skill-tag:hover {
+  border-color: var(--text-dim);
+  color: var(--text-mid);
+}
+
+/*CONTACT*/
+.contact-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.2rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+}
+.contact-row:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.contact-key {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-val {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-mid);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-val:hover {
+  color: var(--text);
+}
+
+/*RESPONSIVE*/
+@media (max-width: 640px) {
+  .about-page        { padding-left: 1rem; padding-right: 1rem; }
+  .profile-header    { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .career-row        { grid-template-columns: 80px 1fr; }
+}
+
+
+
+/* 太字 */
+.t-bold   { font-weight: 600; color: var(--text); }
+ 
+/* 斜体 */
+.t-italic { font-style: italic; }
+ 
+/* 取り消し線 */
+.t-del    { text-decoration: line-through; color: var(--text-dim); }
+ 
+/* 下線 */
+.t-u      { text-decoration: underline; text-underline-offset: 3px; }
+ 
+/* ハイライト*/
+.t-mark {
+  background: #7a9a6a33;
+  padding: 0.05em 0.25em;
+  border-radius: 2px;
+}
+[data-theme="light"] .t-mark { background: #4a7a3a33; }
+ 
+/* 色クラス */
+.t-Trip     { color: #0717f8; }
+.t-Opinion     { color: #f80794; }
+
+ 
+[data-theme="light"] .t-Trip     { color: #0717f8; }
+[data-theme="light"] .t-Opinion     { color: #f80794; }
+
+
+/* 小文字・大文字 */
+.t-upper { text-transform: uppercase; letter-spacing: 0.08em; }
+.t-lower { text-transform: lowercase; }
+.t-small { font-size: 0.78em; color: var(--text-dim); }
+ 
+/*バッジ */
+.t-kbd {
+  font-family: var(--mono);
+  font-size: 0.72em;
+  color: var(--text-mid);
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  padding: 0.1em 0.45em;
+  border-radius: 3px;
+  white-space: nowrap;
+}
