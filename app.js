@@ -51,7 +51,7 @@ function renderNav() {
   const isDark = state.theme === 'dark';
 
   $('nav').innerHTML = `
-    <div class="nav-logo">o-o0.com</div>
+    <div class="nav-logo">Copy of o-o0.com</div>
     <ul class="nav-links">
       ${t('nav').map((n, i) => `<li><a href="${NAV_HREFS[i]}">${escapeHtml(n)}</a></li>`).join('')}
     </ul>
